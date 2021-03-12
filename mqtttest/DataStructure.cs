@@ -13,17 +13,6 @@ namespace mqtttest
         public string id { get; set; }
         public Object @params { get; set; }
     }
-    //class Device_status_set
-    //{
-    //    public int Switch { get; set; }            //1 代表 ON 代表开机，0代表 OFF代表关机
-    //    public int Mode { get; set; }                  // 1-N 个模式，代表制冷，制热，送风，预热等（需要配合办公室空调定义）
-    //    public int Temperature { get; set; }        //设定空调的温度
-    //    public int Humility { get; set; }            // 设定空调的湿度
-    //    public int Direction { get; set; }            // 1-N 个模式，代表 摆动，自动，停止等（需要配合办公室空调定义）
-    //    public int AirFlow{ get; set; }          //LL，L，M，H，HH，AUTO 几个风量档位分别对应 1,2,3,4,5,6
-    //    public int Ventilation { get; set; }  // 换气模式，包含 AUTO HEAT NORMAL  分别对应 1,2,3
-    //    public int FilterReset { get; set; }    //过滤信号复位 YES or NO 分别对应 1,0
-    //}
     class socket_set
     {
         public string DeviceID { get; set; }

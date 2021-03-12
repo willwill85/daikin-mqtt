@@ -40,8 +40,8 @@
             this.textBox5 = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.label5 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.label5 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -161,15 +161,7 @@
             this.groupBox2.TabIndex = 14;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Socket 信息";
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(13, 64);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(77, 12);
-            this.label5.TabIndex = 12;
-            this.label5.Text = "Socket状态：";
+            this.groupBox2.Enter += new System.EventHandler(this.groupBox2_Enter);
             // 
             // pictureBox1
             // 
@@ -179,6 +171,15 @@
             this.pictureBox1.Size = new System.Drawing.Size(104, 75);
             this.pictureBox1.TabIndex = 14;
             this.pictureBox1.TabStop = false;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(13, 64);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(77, 12);
+            this.label5.TabIndex = 12;
+            this.label5.Text = "Socket状态：";
             // 
             // DaikinDeamon
             // 

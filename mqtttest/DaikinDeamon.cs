@@ -31,11 +31,11 @@ namespace mqtttest
         String deviceSecret;
         MqttClient mqttClient;
         static Thread serverThrad;
-        //private IPackage package = new IPackage();
         static AppServer appServer { get; set; }
         public int signal_counter = 0;
         public string buffer = "";
         AppSession mysession;
+        //socket 初始化
         public void connect()
         {
             appServer = new AppServer();
@@ -57,6 +57,7 @@ namespace mqtttest
             appServer.NewRequestReceived += new RequestHandler<AppSession, StringRequestInfo>(appServer_NewRequestReceived);
             
         }
+        //连接事件
          void appServer_NewSessionConnected(AppSession session)
         {
             string a = "服务端得到来自客户端的连接成功";
@@ -65,7 +66,7 @@ namespace mqtttest
             pictureBox1.Image = Properties.Resources.connect;
             //session.Send("Welcome to SuperSocket Telnet Server");
         }
-
+        //断开事件
          void appServer_NewSessionClosed(AppSession session, SuperSocket.SocketBase.CloseReason aaa)
         {
             Socket_LOG("服务端 失去 来自客户端的连接" + session.SessionID + aaa.ToString());
@@ -73,13 +74,10 @@ namespace mqtttest
             var count = appServer.GetAllSessions().Count();
             Console.WriteLine(count);
         }
-
+        //socket收到消息
         void appServer_NewRequestReceived(AppSession session, StringRequestInfo requestInfo)
         {
-            //textBox5.Text = requestInfo.Key;
             push_buffer(requestInfo.Key);
-            //Socket_LOG(requestInfo.Key);
-            //session.Send(requestInfo.Body);
         }
         void push_buffer(string temp)
         {
@@ -112,7 +110,7 @@ namespace mqtttest
             deviceName = textBox2.Text;
             deviceSecret = textBox3.Text;
 
-            // 计算MQTT连接参数。
+            // MQTT连接参数。
             MqttSign sign = new MqttSign();
             sign.calculate(productKey, deviceName, deviceSecret);
 
@@ -136,6 +134,7 @@ namespace mqtttest
 
 
         }
+        //MQTT 收到消息转发到本地
         private void MqttPostProperty_MqttMsgPublishReceived(object sender, uPLibrary.Networking.M2Mqtt.Messages.MqttMsgPublishEventArgs e)
         {
             LOG("reply topic  :" + e.Topic);
@@ -163,6 +162,7 @@ namespace mqtttest
         {
             textBox5.Text += log + "\r\n";
         }
+        //UNIX 时间转化
         public long ConvertDateTimeInt(System.DateTime time)
         {
             //double intResult = 0;
@@ -171,10 +171,8 @@ namespace mqtttest
             long t = (time.Ticks - startTime.Ticks) / 10000; //除10000调整为13位
             return t;
         }
-        private void button1_Click(object sender, EventArgs e)
-        {
 
-        }
+        //回传设备属性到云
         public void publish_status(string socketdata)
         {
             string topic = "/sys/g5v3zxg641h/" + deviceName + "/thing/event/property/post";
@@ -192,6 +190,7 @@ namespace mqtttest
             byte[] message = Encoding.ASCII.GetBytes(msg);
             mqttClient.Publish(topic, message);
         }
+        //阿里云 json 特殊形式
         public static string JSONtoALIiot(string json)
         {
             string[] oldkey = { "Switch", "Mode", "Temperature", "Humility", "Direction", "AirFlow", "Ventilation", "FilterReset", "Exception", "Connection" };
@@ -203,11 +202,9 @@ namespace mqtttest
             return json;
         }
 
-        private void button1_Click_1(object sender, EventArgs e)
-        {
-            // appServer.
-            mysession.Send("hello");
-        }
+
+
+
     }
    
 }
