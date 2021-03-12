@@ -1,0 +1,660 @@
+{
+  "schema": "https://iotx-tsl.oss-ap-southeast-1.aliyuncs.com/schema.json",
+  "profile": {
+    "version": "1.0",
+    "productKey": "g5v3zxg641h"
+  },
+  "properties": [
+    {
+      "identifier": "Switch",
+      "name": "Switch",
+      "accessMode": "rw",
+      "required": false,
+      "dataType": {
+        "type": "enum",
+        "specs": {
+          "0": "OFF",
+          "1": "ON"
+        }
+      }
+    },
+    {
+      "identifier": "Mode",
+      "name": "Mode",
+      "accessMode": "rw",
+      "required": false,
+      "dataType": {
+        "type": "int",
+        "specs": {
+          "min": "0",
+          "max": "100",
+          "step": "1"
+        }
+      }
+    },
+    {
+      "identifier": "Temperature",
+      "name": "Temperature",
+      "accessMode": "rw",
+      "required": false,
+      "dataType": {
+        "type": "int",
+        "specs": {
+          "min": "-30",
+          "max": "60",
+          "step": "1"
+        }
+      }
+    },
+    {
+      "identifier": "Humility",
+      "name": "Humility",
+      "accessMode": "rw",
+      "required": false,
+      "dataType": {
+        "type": "int",
+        "specs": {
+          "min": "0",
+          "max": "100",
+          "unit": "%",
+          "unitName": "百分比",
+          "step": "1"
+        }
+      }
+    },
+    {
+      "identifier": "Direction",
+      "name": "Direction",
+      "accessMode": "rw",
+      "required": false,
+      "dataType": {
+        "type": "int",
+        "specs": {
+          "min": "0",
+          "max": "100",
+          "step": "1"
+        }
+      }
+    },
+    {
+      "identifier": "AirFlow",
+      "name": "AirFlow",
+      "accessMode": "rw",
+      "required": false,
+      "dataType": {
+        "type": "enum",
+        "specs": {
+          "0": "LL",
+          "1": "L",
+          "2": "M",
+          "3": "H",
+          "4": "HH",
+          "5": "AUTO"
+        }
+      }
+    },
+    {
+      "identifier": "Ventilation",
+      "name": "Ventilation",
+      "accessMode": "rw",
+      "required": false,
+      "dataType": {
+        "type": "enum",
+        "specs": {
+          "0": "AUTO",
+          "1": "HEAT",
+          "2": "NORMAL"
+        }
+      }
+    },
+    {
+      "identifier": "FilterReset",
+      "name": "FilterReset",
+      "accessMode": "rw",
+      "required": false,
+      "dataType": {
+        "type": "enum",
+        "specs": {
+          "0": "NO",
+          "1": "YES"
+        }
+      }
+    },
+    {
+      "identifier": "Temperature_R",
+      "name": "Temperature_R",
+      "accessMode": "rw",
+      "required": false,
+      "dataType": {
+        "type": "int",
+        "specs": {
+          "min": "-30",
+          "max": "60",
+          "step": "1"
+        }
+      }
+    },
+    {
+      "identifier": "Humility_R",
+      "name": "Humility_R",
+      "accessMode": "rw",
+      "required": false,
+      "dataType": {
+        "type": "int",
+        "specs": {
+          "min": "0",
+          "max": "100",
+          "step": "1"
+        }
+      }
+    },
+    {
+      "identifier": "Exception",
+      "name": "Exception",
+      "accessMode": "rw",
+      "required": false,
+      "dataType": {
+        "type": "text",
+        "specs": {
+          "length": "20"
+        }
+      }
+    },
+    {
+      "identifier": "Connection",
+      "name": "Connection",
+      "accessMode": "rw",
+      "required": false,
+      "dataType": {
+        "type": "enum",
+        "specs": {
+          "0": "FAIL",
+          "1": "OK"
+        }
+      }
+    }
+  ],
+  "events": [
+    {
+      "identifier": "post",
+      "name": "post",
+      "type": "info",
+      "required": true,
+      "desc": "属性上报",
+      "method": "thing.event.property.post",
+      "outputData": [
+        {
+          "identifier": "Switch",
+          "name": "Switch",
+          "dataType": {
+            "type": "enum",
+            "specs": {
+              "0": "OFF",
+              "1": "ON"
+            }
+          }
+        },
+        {
+          "identifier": "Mode",
+          "name": "Mode",
+          "dataType": {
+            "type": "int",
+            "specs": {
+              "min": "0",
+              "max": "100",
+              "step": "1"
+            }
+          }
+        },
+        {
+          "identifier": "Temperature",
+          "name": "Temperature",
+          "dataType": {
+            "type": "int",
+            "specs": {
+              "min": "-30",
+              "max": "60",
+              "step": "1"
+            }
+          }
+        },
+        {
+          "identifier": "Humility",
+          "name": "Humility",
+          "dataType": {
+            "type": "int",
+            "specs": {
+              "min": "0",
+              "max": "100",
+              "unit": "%",
+              "unitName": "百分比",
+              "step": "1"
+            }
+          }
+        },
+        {
+          "identifier": "Direction",
+          "name": "Direction",
+          "dataType": {
+            "type": "int",
+            "specs": {
+              "min": "0",
+              "max": "100",
+              "step": "1"
+            }
+          }
+        },
+        {
+          "identifier": "AirFlow",
+          "name": "AirFlow",
+          "dataType": {
+            "type": "enum",
+            "specs": {
+              "0": "LL",
+              "1": "L",
+              "2": "M",
+              "3": "H",
+              "4": "HH",
+              "5": "AUTO"
+            }
+          }
+        },
+        {
+          "identifier": "Ventilation",
+          "name": "Ventilation",
+          "dataType": {
+            "type": "enum",
+            "specs": {
+              "0": "AUTO",
+              "1": "HEAT",
+              "2": "NORMAL"
+            }
+          }
+        },
+        {
+          "identifier": "FilterReset",
+          "name": "FilterReset",
+          "dataType": {
+            "type": "enum",
+            "specs": {
+              "0": "NO",
+              "1": "YES"
+            }
+          }
+        },
+        {
+          "identifier": "Temperature_R",
+          "name": "Temperature_R",
+          "dataType": {
+            "type": "int",
+            "specs": {
+              "min": "-30",
+              "max": "60",
+              "step": "1"
+            }
+          }
+        },
+        {
+          "identifier": "Humility_R",
+          "name": "Humility_R",
+          "dataType": {
+            "type": "int",
+            "specs": {
+              "min": "0",
+              "max": "100",
+              "step": "1"
+            }
+          }
+        },
+        {
+          "identifier": "Exception",
+          "name": "Exception",
+          "dataType": {
+            "type": "text",
+            "specs": {
+              "length": "20"
+            }
+          }
+        },
+        {
+          "identifier": "Connection",
+          "name": "Connection",
+          "dataType": {
+            "type": "enum",
+            "specs": {
+              "0": "FAIL",
+              "1": "OK"
+            }
+          }
+        }
+      ]
+    }
+  ],
+  "services": [
+    {
+      "identifier": "set",
+      "name": "set",
+      "required": true,
+      "callType": "async",
+      "desc": "属性设置",
+      "method": "thing.service.property.set",
+      "inputData": [
+        {
+          "identifier": "Switch",
+          "name": "Switch",
+          "dataType": {
+            "type": "enum",
+            "specs": {
+              "0": "OFF",
+              "1": "ON"
+            }
+          }
+        },
+        {
+          "identifier": "Mode",
+          "name": "Mode",
+          "dataType": {
+            "type": "int",
+            "specs": {
+              "min": "0",
+              "max": "100",
+              "step": "1"
+            }
+          }
+        },
+        {
+          "identifier": "Temperature",
+          "name": "Temperature",
+          "dataType": {
+            "type": "int",
+            "specs": {
+              "min": "-30",
+              "max": "60",
+              "step": "1"
+            }
+          }
+        },
+        {
+          "identifier": "Humility",
+          "name": "Humility",
+          "dataType": {
+            "type": "int",
+            "specs": {
+              "min": "0",
+              "max": "100",
+              "unit": "%",
+              "unitName": "百分比",
+              "step": "1"
+            }
+          }
+        },
+        {
+          "identifier": "Direction",
+          "name": "Direction",
+          "dataType": {
+            "type": "int",
+            "specs": {
+              "min": "0",
+              "max": "100",
+              "step": "1"
+            }
+          }
+        },
+        {
+          "identifier": "AirFlow",
+          "name": "AirFlow",
+          "dataType": {
+            "type": "enum",
+            "specs": {
+              "0": "LL",
+              "1": "L",
+              "2": "M",
+              "3": "H",
+              "4": "HH",
+              "5": "AUTO"
+            }
+          }
+        },
+        {
+          "identifier": "Ventilation",
+          "name": "Ventilation",
+          "dataType": {
+            "type": "enum",
+            "specs": {
+              "0": "AUTO",
+              "1": "HEAT",
+              "2": "NORMAL"
+            }
+          }
+        },
+        {
+          "identifier": "FilterReset",
+          "name": "FilterReset",
+          "dataType": {
+            "type": "enum",
+            "specs": {
+              "0": "NO",
+              "1": "YES"
+            }
+          }
+        },
+        {
+          "identifier": "Temperature_R",
+          "name": "Temperature_R",
+          "dataType": {
+            "type": "int",
+            "specs": {
+              "min": "-30",
+              "max": "60",
+              "step": "1"
+            }
+          }
+        },
+        {
+          "identifier": "Humility_R",
+          "name": "Humility_R",
+          "dataType": {
+            "type": "int",
+            "specs": {
+              "min": "0",
+              "max": "100",
+              "step": "1"
+            }
+          }
+        },
+        {
+          "identifier": "Exception",
+          "name": "Exception",
+          "dataType": {
+            "type": "text",
+            "specs": {
+              "length": "20"
+            }
+          }
+        },
+        {
+          "identifier": "Connection",
+          "name": "Connection",
+          "dataType": {
+            "type": "enum",
+            "specs": {
+              "0": "FAIL",
+              "1": "OK"
+            }
+          }
+        }
+      ],
+      "outputData": []
+    },
+    {
+      "identifier": "get",
+      "name": "get",
+      "required": true,
+      "callType": "async",
+      "desc": "属性获取",
+      "method": "thing.service.property.get",
+      "inputData": [
+        "Switch",
+        "Mode",
+        "Temperature",
+        "Humility",
+        "Direction",
+        "AirFlow",
+        "Ventilation",
+        "FilterReset",
+        "Temperature_R",
+        "Humility_R",
+        "Exception",
+        "Connection"
+      ],
+      "outputData": [
+        {
+          "identifier": "Switch",
+          "name": "Switch",
+          "dataType": {
+            "type": "enum",
+            "specs": {
+              "0": "OFF",
+              "1": "ON"
+            }
+          }
+        },
+        {
+          "identifier": "Mode",
+          "name": "Mode",
+          "dataType": {
+            "type": "int",
+            "specs": {
+              "min": "0",
+              "max": "100",
+              "step": "1"
+            }
+          }
+        },
+        {
+          "identifier": "Temperature",
+          "name": "Temperature",
+          "dataType": {
+            "type": "int",
+            "specs": {
+              "min": "-30",
+              "max": "60",
+              "step": "1"
+            }
+          }
+        },
+        {
+          "identifier": "Humility",
+          "name": "Humility",
+          "dataType": {
+            "type": "int",
+            "specs": {
+              "min": "0",
+              "max": "100",
+              "unit": "%",
+              "unitName": "百分比",
+              "step": "1"
+            }
+          }
+        },
+        {
+          "identifier": "Direction",
+          "name": "Direction",
+          "dataType": {
+            "type": "int",
+            "specs": {
+              "min": "0",
+              "max": "100",
+              "step": "1"
+            }
+          }
+        },
+        {
+          "identifier": "AirFlow",
+          "name": "AirFlow",
+          "dataType": {
+            "type": "enum",
+            "specs": {
+              "0": "LL",
+              "1": "L",
+              "2": "M",
+              "3": "H",
+              "4": "HH",
+              "5": "AUTO"
+            }
+          }
+        },
+        {
+          "identifier": "Ventilation",
+          "name": "Ventilation",
+          "dataType": {
+            "type": "enum",
+            "specs": {
+              "0": "AUTO",
+              "1": "HEAT",
+              "2": "NORMAL"
+            }
+          }
+        },
+        {
+          "identifier": "FilterReset",
+          "name": "FilterReset",
+          "dataType": {
+            "type": "enum",
+            "specs": {
+              "0": "NO",
+              "1": "YES"
+            }
+          }
+        },
+        {
+          "identifier": "Temperature_R",
+          "name": "Temperature_R",
+          "dataType": {
+            "type": "int",
+            "specs": {
+              "min": "-30",
+              "max": "60",
+              "step": "1"
+            }
+          }
+        },
+        {
+          "identifier": "Humility_R",
+          "name": "Humility_R",
+          "dataType": {
+            "type": "int",
+            "specs": {
+              "min": "0",
+              "max": "100",
+              "step": "1"
+            }
+          }
+        },
+        {
+          "identifier": "Exception",
+          "name": "Exception",
+          "dataType": {
+            "type": "text",
+            "specs": {
+              "length": "20"
+            }
+          }
+        },
+        {
+          "identifier": "Connection",
+          "name": "Connection",
+          "dataType": {
+            "type": "enum",
+            "specs": {
+              "0": "FAIL",
+              "1": "OK"
+            }
+          }
+        }
+      ]
+    }
+  ],
+  "functionBlockId": "1",
+  "functionBlockName": "daikinac"
+}
