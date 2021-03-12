@@ -202,9 +202,10 @@ namespace mqtttest
             return json;
         }
 
-
-
-
+        private void DaikinDeamon_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            mqttClient.Disconnect();
+        }
     }
    
 }

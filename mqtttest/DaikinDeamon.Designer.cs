@@ -161,7 +161,6 @@
             this.groupBox2.TabIndex = 14;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Socket 信息";
-            //this.groupBox2.Enter += new System.EventHandler(this.groupBox2_Enter);
             // 
             // pictureBox1
             // 
@@ -191,6 +190,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "DaikinDeamon";
             this.Text = "MQTT测试";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.DaikinDeamon_FormClosing);
             this.Load += new System.EventHandler(this.Form1_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
