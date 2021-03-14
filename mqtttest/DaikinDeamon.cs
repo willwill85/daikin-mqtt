@@ -144,9 +144,10 @@ namespace mqtttest
             ss.DeviceID = deviceName;
             ss.CMD = message.@params;
             Socket_LOG(JsonConvert.SerializeObject(ss));
-            mysession.Send(JsonConvert.SerializeObject(ss));
+           
             try
             {
+                mysession.Send(JsonConvert.SerializeObject(ss));
                 //sc.SendData(JsonConvert.SerializeObject(ss));
             }
             catch {
